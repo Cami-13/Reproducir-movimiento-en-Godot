@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw1ucmpgiuxyd"]
+
+[ext_resource type="PackedScene" uid="uid://2jw0pn3hewlx" path="res://Reproducir-movimiento-en-Godot/player.tscn" id="1_twk1i"]
+[ext_resource type="Texture2D" uid="uid://c3j0hhc1x2b7j" path="res://Reproducir-movimiento-en-Godot/Sprites/Pasto.png" id="2_sw7if"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x71t4"]
+size = Vector2(701, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twk1i"]
+size = Vector2(124, 321)
+
+[node name="Plataforma" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 709.0
+offset_bottom = 303.0
+color = Color(0.290196, 1, 0.988235, 1)
+
+[node name="Suelo" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo"]
+position = Vector2(558, 269)
+scale = Vector2(0.58534, 0.36)
+texture = ExtResource("2_sw7if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(350.5, 280.5)
+shape = SubResource("RectangleShape2D_x71t4")
+
+[node name="Suelo2" type="StaticBody2D" parent="."]
+position = Vector2(-228, -305)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo2"]
+position = Vector2(558, 269)
+scale = Vector2(0.58534, 0.36)
+texture = ExtResource("2_sw7if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo2"]
+position = Vector2(350.5, 280.5)
+shape = SubResource("RectangleShape2D_x71t4")
+
+[node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2(87, 77)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared"]
+position = Vector2(-272.182, 144.014)
+rotation = -1.5708
+scale = Vector2(0.169327, 2.73182)
+texture = ExtResource("2_sw7if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(-59, 145.5)
+shape = SubResource("RectangleShape2D_twk1i")
+
+[node name="Pared3" type="StaticBody2D" parent="."]
+position = Vector2(4, -24)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared3"]
+position = Vector2(-272.182, 144.014)
+rotation = -1.5708
+scale = Vector2(0.169327, 2.73182)
+texture = ExtResource("2_sw7if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared3"]
+position = Vector2(-59, 145.5)
+shape = SubResource("RectangleShape2D_twk1i")
+
+[node name="Pared2" type="StaticBody2D" parent="."]
+position = Vector2(909, -4)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared2"]
+position = Vector2(-99, 144.013)
+rotation = 1.57254
+scale = Vector2(0.169327, 1)
+texture = ExtResource("2_sw7if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
+position = Vector2(-136, 144)
+shape = SubResource("RectangleShape2D_twk1i")
+
+[node name="Player" parent="." instance=ExtResource("1_twk1i")]
+position = Vector2(38, 39)
